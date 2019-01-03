@@ -20,24 +20,24 @@
 
 import Foundation
 
-extension ArraySlice: UnsafeMemoryAccessible, UnsafeMutableMemoryAccessible {
-    public func withUnsafeMemory<Result>(_ action: (UnsafeMemory<Element>) throws -> Result) rethrows -> Result {
-        return try withUnsafeBufferPointer { ptr in
-            guard let base = ptr.baseAddress else {
-                fatalError("ArraySlice is missing its pointer")
-            }
-            let memory = UnsafeMemory(pointer: base, stride: 1, count: ptr.count)
-            return try action(memory)
-        }
-    }
-
-    public mutating func withUnsafeMutableMemory<Result>(_ action: (UnsafeMutableMemory<Element>) throws -> Result) rethrows -> Result {
-        return try withUnsafeMutableBufferPointer { ptr in
-            guard let base = ptr.baseAddress else {
-                fatalError("ArraySlice is missing its pointer")
-            }
-            let memory = UnsafeMutableMemory(pointer: base, stride: 1, count: ptr.count)
-            return try action(memory)
-        }
-    }
-}
+//extension ArraySlice: UnsafeMemoryAccessible, UnsafeMutableMemoryAccessible {
+//    public func withUnsafeMemory<Result>(_ action: (UnsafeMemory<Element>) throws -> Result) rethrows -> Result {
+//        return try withUnsafeBufferPointer { ptr in
+//            guard let base = ptr.baseAddress else {
+//                fatalError("ArraySlice is missing its pointer")
+//            }
+//            let memory = UnsafeMemory(pointer: base, stride: 1, count: ptr.count)
+//            return try action(memory)
+//        }
+//    }
+//
+//    public mutating func withUnsafeMutableMemory<Result>(_ action: (UnsafeMutableMemory<Element>) throws -> Result) rethrows -> Result {
+//        return try withUnsafeMutableBufferPointer { ptr in
+//            guard let base = ptr.baseAddress else {
+//                fatalError("ArraySlice is missing its pointer")
+//            }
+//            let memory = UnsafeMutableMemory(pointer: base, stride: 1, count: ptr.count)
+//            return try action(memory)
+//        }
+//    }
+//}

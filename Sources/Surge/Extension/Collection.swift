@@ -21,31 +21,39 @@
 import Foundation
 import Accelerate
 
-extension Array where Element == Double {
+public protocol UnsafeMemoryAccessible {
+    associatedtype Pointer
+    func withUnsafeBufferPointer<R>(_ body: (UnsafeBufferPointer<Pointer>) throws -> R) rethrows -> R
+}
 
-    func pow(exponents y: [Element]) -> [Element] {
-        var result = [Element](repeating: 0, count: y.count)
-        var x = self
-        var n = Int32(self.count)
-        vvpow(&result, &x, y, &n)
-        return result
-    }
+ extension Collection where Element == Double, Self: UnsafeMemoryAccessible {
+//
+//  public func pow(exponents y: [Element]) -> [Element] {
+//        let out = withUnsafeBufferPointer { (pointer) -> [Element] in
+//            var result = [Element](repeating: 0, count: y.count)
+//            var n = Int32(self.count)
+//            let x_address = pointer.baseAddress as? UnsafePointer<Element>
+//            vvpow(&result, x_address!, y, &n)
+//            return result
+//        }
+//        return out
+//    }
 
-    func pow(exponent y: Element) -> [Element] {
+  public func pow(exponent y: Element) -> [Element] {
         var result = [Element](repeating: 0, count: self.count)
-        var x = self
+        var x = Array(self)
         var n = Int32(self.count)
         var _y = [Element](repeating: y, count: self.count)
-        vvpow(&result, &x, &_y, &n)
+        vvpow(&result, &_y, &x, &n)
         return result
     }
 }
 
-extension Array where Element == Float {
+extension Collection where Element == Float {
 
     func pow(exponents y: [Element]) -> [Element] {
         var result = [Element](repeating: 0, count: y.count)
-        var x = self
+        var x = Array(self)
         var n = Int32(self.count)
         vvpowf(&result, &x, y, &n)
         return result
@@ -53,7 +61,7 @@ extension Array where Element == Float {
 
     func pow(exponent y: Element) -> [Element] {
         var result = [Element](repeating: 0, count: self.count)
-        var x = self
+        var x = Array(self)
         var n = Int32(self.count)
         var _y = [Element](repeating: y, count: self.count)
         vvpowf(&result, &x, &_y, &n)
