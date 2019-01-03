@@ -12,6 +12,9 @@
 		008CC03621DD687400B83861 /* MatrixType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008CC03321DD526100B83861 /* MatrixType.swift */; };
 		008CC03721DD687500B83861 /* MatrixType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008CC03321DD526100B83861 /* MatrixType.swift */; };
 		008CC03921DD763500B83861 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008CC03821DD763500B83861 /* Array.swift */; };
+		00DF4DCC21DE34CD009A3356 /* ArrayExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF4DCB21DE34CD009A3356 /* ArrayExp.swift */; };
+		00DF4DCE21DE351F009A3356 /* ArrayStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF4DCD21DE351F009A3356 /* ArrayStatistic.swift */; };
+		00DF4DD021DE3634009A3356 /* ArrayArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DF4DCF21DE3634009A3356 /* ArrayArithmetic.swift */; };
 		614AD3281FC0AD99002BFE1C /* Surge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 614AD31F1FC0AD99002BFE1C /* Surge.framework */; };
 		614AD3371FC0AF6C002BFE1C /* Surge.h in Headers */ = {isa = PBXBuildFile; fileRef = 615394541F762B58002A4AD2 /* Surge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		614AD3381FC0AF72002BFE1C /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6153944B1F762B58002A4AD2 /* Arithmetic.swift */; };
@@ -136,6 +139,9 @@
 /* Begin PBXFileReference section */
 		008CC03321DD526100B83861 /* MatrixType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixType.swift; sourceTree = "<group>"; };
 		008CC03821DD763500B83861 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		00DF4DCB21DE34CD009A3356 /* ArrayExp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExp.swift; sourceTree = "<group>"; };
+		00DF4DCD21DE351F009A3356 /* ArrayStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayStatistic.swift; sourceTree = "<group>"; };
+		00DF4DCF21DE3634009A3356 /* ArrayArithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayArithmetic.swift; sourceTree = "<group>"; };
 		614AD31F1FC0AD99002BFE1C /* Surge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Surge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		614AD3221FC0AD99002BFE1C /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		614AD3271FC0AD99002BFE1C /* SurgeTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SurgeTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,12 +241,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		008CC03A21DD763F00B83861 /* Extensuion */ = {
+		008CC03A21DD763F00B83861 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				008CC03821DD763500B83861 /* Array.swift */,
+				00DF4DCD21DE351F009A3356 /* ArrayStatistic.swift */,
+				00DF4DCB21DE34CD009A3356 /* ArrayExp.swift */,
+				00DF4DCF21DE3634009A3356 /* ArrayArithmetic.swift */,
 			);
-			path = Extensuion;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		615394491F762B58002A4AD2 /* Sources */ = {
@@ -271,7 +280,7 @@
 				615394551F762B58002A4AD2 /* Trigonometric.swift */,
 				61E930B7207002EA00694FCB /* UnsafeMemory.swift */,
 				61E930C12070B69300694FCB /* UnsafeMutableMemory.swift */,
-				008CC03A21DD763F00B83861 /* Extensuion */,
+				008CC03A21DD763F00B83861 /* Extension */,
 			);
 			path = Surge;
 			sourceTree = "<group>";
@@ -826,8 +835,11 @@
 				615394561F762B59002A4AD2 /* Arithmetic.swift in Sources */,
 				008CC03421DD526100B83861 /* MatrixType.swift in Sources */,
 				6153945B1F762B59002A4AD2 /* Hyperbolic.swift in Sources */,
+				00DF4DD021DE3634009A3356 /* ArrayArithmetic.swift in Sources */,
 				615394581F762B59002A4AD2 /* Convolution.swift in Sources */,
 				6153945D1F762B59002A4AD2 /* Pointers.swift in Sources */,
+				00DF4DCC21DE34CD009A3356 /* ArrayExp.swift in Sources */,
+				00DF4DCE21DE351F009A3356 /* ArrayStatistic.swift in Sources */,
 				6153945A1F762B59002A4AD2 /* FFT.swift in Sources */,
 				61E930BD2070104600694FCB /* ArrayUnsafeMemory.swift in Sources */,
 				61E930B8207002EA00694FCB /* UnsafeMemory.swift in Sources */,

@@ -240,9 +240,9 @@ extension MatrixType where Scalar == Double {
     }
 }
 
-
+// MARK:
 extension MatrixType where Scalar == Float {
-
+    // FIXME: use the arithmetic implementation
     func add(_ y: Self) -> Self {
         precondition(self.rows == y.rows && self.columns == y.columns, "Matrix dimensions not compatible with addition")
         var results = y
